@@ -23,7 +23,7 @@
                 <tbody>
                     @forelse($loans as $loan)
                         @php
-                            $isLate = ($loan->status == 'dipinjam' || $loan->status == 'menunggu_konfirmasi') && now()->gt($loan->tanggal_jatuh_tempo);
+                            $isLate = ($loan->status == 'dipinjam' || $loan->status == 'menunggu_konfirmasi') && now()->gt($loan->tanggal_jatuh_tempo?? now());//gunakan ?? untuk menangani null
                         @endphp
                         <tr>
                             <td class="px-4">
