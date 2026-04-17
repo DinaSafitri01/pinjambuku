@@ -13,7 +13,7 @@ class AuthController extends Controller
     {
         return view('landing');
     }
-
+    
     public function welcome()
     {
         return view('auth.welcome');

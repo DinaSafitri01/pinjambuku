@@ -101,7 +101,7 @@
                                     <h3 class="fw-bold mb-0">{{ $item->judul }}</h3>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                
+
                                 <div class="row g-3 mb-5">
                                     <div class="col-6">
                                         <p class="text-muted small mb-1">Penulis</p>
@@ -122,6 +122,13 @@
                                                 {{ $item->stok }} Buku
                                             </span>
                                         </p>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <div> <p class="text-muted small mb-0">Tanggal Pinjam</p>
+                                                <p>{{  now()->format('d-m-Y') }}</p></div>
+                                           <div><p class="text-muted small mb-0">Tanggal Kembali</p>
+                                                    <p>{{ now()->addDays(10)->format('d-m-Y') }}</p></div>
+
+                                        </div>
                                     </div>
                                 </div>
 

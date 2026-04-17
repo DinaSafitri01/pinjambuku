@@ -49,7 +49,7 @@ class SiswaControllers extends Controller
     {
         $request->validate([
             'buku_id' => 'required|exists:buku,id',
-            
+
         ]);
 
         $user = Auth::user();
@@ -74,7 +74,7 @@ class SiswaControllers extends Controller
             'user_id' => $user->id,
             'buku_id' => $buku->id,
             'tanggal_pinjam' => now(),
-            'tanggal_jatuh_tempo' => now()->addDays(7),
+            'tanggal_jatuh_tempo' => now()->addDays(10),
             'status' => 'dipinjam',
         ]);
 
@@ -111,7 +111,7 @@ class SiswaControllers extends Controller
 
         $peminjaman->update([
             'status' => 'menunggu_konfirmasi',
-            'tanggal_kembali' => now(),
+            'tanggal_kembali' => now()->addDays(10),
         ]);
     }
 }
